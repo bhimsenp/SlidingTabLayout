@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  SlidingTabLayout
-//
-//  Created by bhimsenp on 03/12/2020.
-//  Copyright (c) 2020 bhimsenp. All rights reserved.
-//
-
 import UIKit
 import SlidingTabLayout
 
@@ -28,8 +20,10 @@ class ViewController: UIViewController {
 			SlidingTabItem(title: "Blue", viewController: vc2),
 			SlidingTabItem(title: "Green", viewController: vc3)
 		])
-		headerContainer.addSubviewWithMatchingConstraints(slidingTab.getHeader())
-		contentContainer.addSubviewWithMatchingConstraints(slidingTab.getContentView())
+		headerContainer.addSubviewWithMatchingConstraints(slidingTab.header)
+		contentContainer.addSubviewWithMatchingConstraints(slidingTab.contentView)
+		slidingTab.header.sliderColor = UIColor.green
+		slidingTab.header.activeTitleColor = .brown
     }
 
 }
