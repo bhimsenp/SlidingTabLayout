@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SlidingTabLayout_Example' do
+  pod 'SlidingTabLayout', :path => '../'
+
+  target 'SlidingTabLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
