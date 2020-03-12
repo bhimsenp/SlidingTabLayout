@@ -19,7 +19,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Bhimsen Padalkar' => 'bhim.padalkar@gmail.com' }
   s.source           = { :git => 'https://github.com/bhimsenp/SlidingTabLayout.git', :tag => s.version.to_s }
-
+  s.swift_versions	 = ['4.0', '5.0']
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SlidingTabLayout/Classes/**/*'

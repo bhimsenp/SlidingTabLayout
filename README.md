@@ -22,7 +22,7 @@ pod 'SlidingTabLayout'
 
 ## Author
 
-bhimsenp, bhim.padalkar@gmail.com
+Bhimsen Padalkar, bhim.padalkar@gmail.com
 
 ## License
 
