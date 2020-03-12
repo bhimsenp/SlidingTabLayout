@@ -1,0 +1,6 @@
+framework module Pods_SlidingTabLayout_Tests {
+  umbrella header "Pods-SlidingTabLayout_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

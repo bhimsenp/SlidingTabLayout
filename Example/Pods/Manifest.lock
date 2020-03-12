@@ -1,0 +1,16 @@
+PODS:
+  - SlidingTabLayout (0.1.0)
+
+DEPENDENCIES:
+  - SlidingTabLayout (from `../`)
+
+EXTERNAL SOURCES:
+  SlidingTabLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SlidingTabLayout: 0797e9dd4c52fb73d34a80f602928df6acdb84de
+
+PODFILE CHECKSUM: 79a509f1e94b6d93c2a865440e0efb1849c6c25c
+
+COCOAPODS: 1.9.0

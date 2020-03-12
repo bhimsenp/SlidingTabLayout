@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import SlidingTabLayout
 
 class ViewController: UIViewController {
-
+	@IBOutlet weak var headerContainer: UIView!
+	@IBOutlet weak var contentContainer: UIView!
+	
+	var slidingTab: SlidingTabLayout!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+		let vc1 = UIViewController()
+		let vc2 = UIViewController()
+		let vc3 = UIViewController()
+		vc1.view.backgroundColor = .red
+		vc2.view.backgroundColor = .blue
+		vc3.view.backgroundColor = .green
+		slidingTab = SlidingTabLayout(items: [
+			SlidingTabItem(title: "Red", viewController: vc1),
+			SlidingTabItem(title: "Blue", viewController: vc2),
+			SlidingTabItem(title: "Green", viewController: vc3)
+		])
+		headerContainer.addSubviewWithMatchingConstraints(slidingTab.getHeader())
+		contentContainer.addSubviewWithMatchingConstraints(slidingTab.getContentView())
     }
 
 }
-

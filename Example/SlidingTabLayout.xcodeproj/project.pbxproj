@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0A973FC7F6D6E7F83668853A /* Pods-SlidingTabLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidingTabLayout_Tests.release.xcconfig"; path = "Target Support Files/Pods-SlidingTabLayout_Tests/Pods-SlidingTabLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		431A0C9A9D43EAF70691DA4F /* SlidingTabLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SlidingTabLayout.podspec; path = ../SlidingTabLayout.podspec; sourceTree = "<group>"; };
+		431A0C9A9D43EAF70691DA4F /* SlidingTabLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SlidingTabLayout.podspec; path = ../SlidingTabLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5B2CBDE3CC3486E82567BB82 /* Pods-SlidingTabLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidingTabLayout_Example.debug.xcconfig"; path = "Target Support Files/Pods-SlidingTabLayout_Example/Pods-SlidingTabLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SlidingTabLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlidingTabLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,10 +41,10 @@
 		607FACE51AFB9204008FA782 /* SlidingTabLayout_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlidingTabLayout_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		745C20DAEA0323EF8F4C786C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		745C20DAEA0323EF8F4C786C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		807358864A42D33698AF13F1 /* Pods-SlidingTabLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidingTabLayout_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SlidingTabLayout_Tests/Pods-SlidingTabLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A5238E327480FF17350BE23A /* Pods-SlidingTabLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidingTabLayout_Example.release.xcconfig"; path = "Target Support Files/Pods-SlidingTabLayout_Example/Pods-SlidingTabLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C58167E5DBA7839B9A73CEBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C58167E5DBA7839B9A73CEBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D02D592FFFA6FDB231ACDA43 /* Pods_SlidingTabLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9797BADBFF2FAB7F7FAA478 /* Pods_SlidingTabLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,7 +77,6 @@
 				807358864A42D33698AF13F1 /* Pods-SlidingTabLayout_Tests.debug.xcconfig */,
 				0A973FC7F6D6E7F83668853A /* Pods-SlidingTabLayout_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

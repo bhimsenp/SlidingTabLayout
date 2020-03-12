@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,18 +12,42 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SlidingTabLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-yM-hrm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="F19-ok-HQO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-WL-kza">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oWD-NG-Jv6" firstAttribute="trailing" secondItem="Ekj-yM-hrm" secondAttribute="trailing" id="208-J8-NTi"/>
+                            <constraint firstItem="oWD-NG-Jv6" firstAttribute="bottom" secondItem="9dC-WL-kza" secondAttribute="bottom" id="4PH-TS-o6u"/>
+                            <constraint firstItem="9dC-WL-kza" firstAttribute="top" secondItem="Ekj-yM-hrm" secondAttribute="bottom" id="E3k-Hw-gk3"/>
+                            <constraint firstItem="Ekj-yM-hrm" firstAttribute="leading" secondItem="oWD-NG-Jv6" secondAttribute="leading" id="VXb-do-pRf"/>
+                            <constraint firstItem="9dC-WL-kza" firstAttribute="leading" secondItem="oWD-NG-Jv6" secondAttribute="leading" id="WuZ-NU-ml3"/>
+                            <constraint firstItem="oWD-NG-Jv6" firstAttribute="trailing" secondItem="9dC-WL-kza" secondAttribute="trailing" id="Ys6-Dj-iPp"/>
+                            <constraint firstItem="Ekj-yM-hrm" firstAttribute="top" secondItem="oWD-NG-Jv6" secondAttribute="top" id="aSb-CC-DXn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oWD-NG-Jv6"/>
                     </view>
+                    <connections>
+                        <outlet property="contentContainer" destination="9dC-WL-kza" id="hGj-Ud-4qB"/>
+                        <outlet property="headerContainer" destination="Ekj-yM-hrm" id="hf1-px-dQH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="134"/>
         </scene>
     </scenes>
 </document>
