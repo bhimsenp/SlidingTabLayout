@@ -47,6 +47,7 @@ public class SlidingTabHeaderView: UIView {
     private let buttons: [UIButton]
     private let slider: UIView
     private var sliderLeadingConstraint: NSLayoutConstraint!
+    private var sliderHeightConstraint: NSLayoutConstraint!
     weak var delegate: SlidingTabHeaderDelegate?
     
     private var selectedIndex: Int {
@@ -73,6 +74,10 @@ public class SlidingTabHeaderView: UIView {
     
     public var sliderColor: UIColor = UIColor.black {
         didSet { slider.backgroundColor = sliderColor }
+    }
+    
+    public var sliderHeight: CGFloat = 5.0 {
+        didSet { sliderHeightConstraint.constant = sliderHeight }
     }
     
     init(items: [SlidingTabItem]) {
@@ -108,10 +113,10 @@ public class SlidingTabHeaderView: UIView {
         let bottom = NSLayoutConstraint(item: slider, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         sliderLeadingConstraint = NSLayoutConstraint(item: slider, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let width = NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: buttons[0], attribute: .width, multiplier: 1, constant: 0)
-        let height = NSLayoutConstraint(item: slider, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 5)
+        sliderHeightConstraint = NSLayoutConstraint(item: slider, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: sliderHeight)
         slider.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(slider)
-        NSLayoutConstraint.activate([bottom, width, sliderLeadingConstraint, height])
+        NSLayoutConstraint.activate([bottom, width, sliderLeadingConstraint, sliderHeightConstraint])
         updateButtonStyle(selectedIndex: 0)
     }
     
