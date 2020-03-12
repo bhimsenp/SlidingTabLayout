@@ -17,26 +17,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ekj-yM-hrm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="F19-ok-HQO"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dC-WL-kza">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62p-IZ-K7S">
+                                <rect key="frame" x="184" y="50" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Wf4-ri-Hya"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oWD-NG-Jv6" firstAttribute="trailing" secondItem="Ekj-yM-hrm" secondAttribute="trailing" id="208-J8-NTi"/>
                             <constraint firstItem="oWD-NG-Jv6" firstAttribute="bottom" secondItem="9dC-WL-kza" secondAttribute="bottom" id="4PH-TS-o6u"/>
                             <constraint firstItem="9dC-WL-kza" firstAttribute="top" secondItem="Ekj-yM-hrm" secondAttribute="bottom" id="E3k-Hw-gk3"/>
+                            <constraint firstItem="62p-IZ-K7S" firstAttribute="top" secondItem="oWD-NG-Jv6" secondAttribute="top" constant="6" id="HEw-dN-RG8"/>
+                            <constraint firstItem="62p-IZ-K7S" firstAttribute="centerX" secondItem="oWD-NG-Jv6" secondAttribute="centerX" id="QIa-qm-IQq"/>
                             <constraint firstItem="Ekj-yM-hrm" firstAttribute="leading" secondItem="oWD-NG-Jv6" secondAttribute="leading" id="VXb-do-pRf"/>
                             <constraint firstItem="9dC-WL-kza" firstAttribute="leading" secondItem="oWD-NG-Jv6" secondAttribute="leading" id="WuZ-NU-ml3"/>
                             <constraint firstItem="oWD-NG-Jv6" firstAttribute="trailing" secondItem="9dC-WL-kza" secondAttribute="trailing" id="Ys6-Dj-iPp"/>
-                            <constraint firstItem="Ekj-yM-hrm" firstAttribute="top" secondItem="oWD-NG-Jv6" secondAttribute="top" id="aSb-CC-DXn"/>
+                            <constraint firstItem="Ekj-yM-hrm" firstAttribute="top" secondItem="oWD-NG-Jv6" secondAttribute="top" constant="50" id="aSb-CC-DXn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oWD-NG-Jv6"/>
                     </view>

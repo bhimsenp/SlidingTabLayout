@@ -16,8 +16,12 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
 		contentView.delegate = self
 	}
 	
+	public func select(tabIndex: Int, animated: Bool) {
+		contentView.move(tabIndex, animated: animated)
+	}
+	
 	func didTapOnItem(withIndex index: Int) {
-		contentView.move(index)
+		contentView.move(index, animated: true)
 	}
 	
 	func didScroll(withOffset offset: CGFloat) {
@@ -44,6 +48,12 @@ public class SlidingTabHeaderView: UIView {
 	private let slider: UIView
 	private var sliderLeadingConstraint: NSLayoutConstraint!
 	weak var delegate: SlidingTabHeaderDelegate?
+	
+	private var selectedIndex: Int {
+		get {
+			buttons.firstIndex(where: {$0.isSelected}) ?? 0
+		}
+	}
 	
 	public var activeTitleColor: UIColor = UIColor.black {
 		didSet { refreshButtons() }
@@ -105,10 +115,6 @@ public class SlidingTabHeaderView: UIView {
 		updateButtonStyle(selectedIndex: 0)
 	}
 	
-	private func refreshButtons() {
-		updateButtonStyle(selectedIndex: buttons.firstIndex(where: {$0.isSelected}) ?? 0)
-	}
-	
 	func move(_ offset: CGFloat) {
 		updateButtonStyle(selectedIndex: lround(Double(offset)))
 		sliderLeadingConstraint.constant = slider.frame.width * offset
@@ -116,6 +122,10 @@ public class SlidingTabHeaderView: UIView {
 	
 	@objc func buttonClicked(sender: UIButton) {
 		delegate?.didTapOnItem(withIndex: sender.tag)
+	}
+	
+	private func refreshButtons() {
+		updateButtonStyle(selectedIndex: selectedIndex)
 	}
 	
 	private func updateButtonStyle(selectedIndex: Int) {
@@ -177,9 +187,13 @@ public class SlidingTabContentView: UIView, UIPageViewControllerDelegate, UIPage
 		return nil
 	}
 	
-	func move(_ index: Int) {
+	func move(_ index: Int, animated: Bool) {
 		for i in stride(from: selectedTabIndex, through: index, by: selectedTabIndex > index ? -1 : 1) {
-			pageViewController.setViewControllers([viewControllers[i]], direction: selectedTabIndex > i ? .reverse : .forward, animated: true, completion: nil)
+			pageViewController.setViewControllers([viewControllers[i]], direction: selectedTabIndex > i ? .reverse : .forward, animated: animated, completion: nil)
+		}
+		if(!animated) {
+			selectedTabIndex = index
+			delegate?.didScroll(withOffset: (CGFloat)(index))
 		}
 	}
 	
