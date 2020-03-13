@@ -2,7 +2,7 @@ import Foundation
 
 public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDelegate {
     
-    let items: [SlidingTabItem]
+    private var items: [SlidingTabItem]
     public let header: SlidingTabHeaderView
     public let contentView: SlidingTabContentView
     private var selectedTabIndex = 0
@@ -17,7 +17,13 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
     }
     
     public func select(tabIndex: Int, animated: Bool) {
+        header.layoutIfNeeded()
         contentView.move(tabIndex, animated: animated)
+    }
+    
+    public func updateItems(items: [SlidingTabItem]) {
+        header.updateItems(items)
+        contentView.updateItems(items)
     }
     
     func didTapOnItem(withIndex index: Int) {
@@ -43,9 +49,10 @@ public struct SlidingTabItem {
 
 public class SlidingTabHeaderView: UIView {
     
-    private let items: [SlidingTabItem]
-    private let buttons: [UIButton]
-    private let slider: UIView
+    private var items: [SlidingTabItem]
+    private var buttons: [UIButton] = []
+    private let stackView = UIStackView()
+    private let slider = UIView()
     private var sliderLeadingConstraint: NSLayoutConstraint!
     private var sliderHeightConstraint: NSLayoutConstraint!
     weak var delegate: SlidingTabHeaderDelegate?
@@ -82,6 +89,19 @@ public class SlidingTabHeaderView: UIView {
     
     init(items: [SlidingTabItem]) {
         self.items = items
+        super.init(frame: CGRect.zero)
+        addSubviewWithMatchingConstraints(stackView)
+        layoutTabs()
+        layoutSlider()
+        updateButtonStyle(selectedIndex: 0)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.items = []
+        super.init(coder: coder)
+    }
+    
+    private func layoutTabs() {
         buttons = items.enumerated().map { (i, item) -> UIButton in
             let button = UIButton(type: .custom)
             button.imageView?.contentMode = .scaleAspectFit
@@ -91,25 +111,17 @@ public class SlidingTabHeaderView: UIView {
             button.tag = i
             return button
         }
-        slider = UIView()
-        super.init(frame: CGRect.zero)
-        layoutTabs()
+        stackView.arrangedSubviews.forEach({$0.removeFromSuperview()})
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        buttons.forEach { (button) in
+            stackView.addArrangedSubview(button)
+            button.addTarget(self, action: #selector(SlidingTabHeaderView.buttonClicked(sender:)), for: .touchUpInside)
+        }
     }
     
-    required init?(coder: NSCoder) {
-        self.items = []
-        self.buttons = []
-        self.slider = UIView()
-        super.init(coder: coder)
-    }
-    
-    private func layoutTabs() {
-        buttons.forEach({$0.addTarget(self, action: #selector(SlidingTabHeaderView.buttonClicked(sender:)), for: .touchUpInside)})
-        let stackview = UIStackView(arrangedSubviews: buttons)
-        stackview.axis = .horizontal
-        stackview.distribution = .fillEqually
-        addSubviewWithMatchingConstraints(stackview)
-        slider.backgroundColor = .black
+    private func layoutSlider() {
+        slider.removeFromSuperview()
         let bottom = NSLayoutConstraint(item: slider, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         sliderLeadingConstraint = NSLayoutConstraint(item: slider, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         let width = NSLayoutConstraint(item: slider, attribute: .width, relatedBy: .equal, toItem: buttons[0], attribute: .width, multiplier: 1, constant: 0)
@@ -117,7 +129,15 @@ public class SlidingTabHeaderView: UIView {
         slider.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(slider)
         NSLayoutConstraint.activate([bottom, width, sliderLeadingConstraint, sliderHeightConstraint])
-        updateButtonStyle(selectedIndex: 0)
+    }
+    
+    func updateItems(_ items: [SlidingTabItem]) {
+        let previouslySelected = selectedIndex
+        self.items = items
+        layoutTabs()
+        layoutSlider()
+        layoutIfNeeded()
+        updateButtonStyle(selectedIndex: previouslySelected >= items.count ? items.count - 1 : previouslySelected)
     }
     
     func move(_ offset: CGFloat) {
@@ -154,7 +174,7 @@ public class SlidingTabHeaderView: UIView {
 
 public class SlidingTabContentView: UIView, UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIScrollViewDelegate {
     
-    private let viewControllers: [UIViewController]
+    private var viewControllers: [UIViewController]
     private let pageViewController: UIPageViewController
     private var selectedTabIndex = 0
     weak var delegate: SlidingTabContentViewDelegate?
@@ -176,6 +196,12 @@ public class SlidingTabContentView: UIView, UIPageViewControllerDelegate, UIPage
         self.viewControllers = []
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         super.init(coder: coder)
+    }
+    
+    func updateItems(_ items: [SlidingTabItem]) {
+        selectedTabIndex = selectedTabIndex >= items.count ? items.count - 1 : selectedTabIndex
+        self.viewControllers = items.map({$0.viewController})
+        move(selectedTabIndex, animated: false)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
