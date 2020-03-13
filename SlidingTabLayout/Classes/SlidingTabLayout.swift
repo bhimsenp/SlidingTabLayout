@@ -7,10 +7,10 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
     public let contentView: SlidingTabContentView
     private var selectedTabIndex = 0
     
-    public init(items: [SlidingTabItem]) {
+    public init(items: [SlidingTabItem], mode: SlidingTabMode = .fixed) {
         assert(items.count > 0, "Should have non zero items")
         self.items = items
-        self.header = SlidingTabHeaderView(items: items)
+        self.header = SlidingTabHeaderView(items: items, mode: mode)
         self.contentView = SlidingTabContentView(viewControllers: items.map({$0.viewController}))
         header.delegate = self
         contentView.delegate = self
@@ -45,6 +45,11 @@ public struct SlidingTabItem {
         self.icon = icon
         self.viewController = viewController
     }
+}
+
+public enum SlidingTabMode {
+    case fixed
+    case free
 }
 
 public extension UIView {
