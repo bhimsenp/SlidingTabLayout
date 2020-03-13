@@ -18,17 +18,21 @@ public class SlidingTabHeaderView: UIView {
         }
     }
     
-    public var activeTitleColor: UIColor = UIColor.black { didSet { refreshButtons() } }
+    public var activeTitleColor: UIColor = .black { didSet { refreshButtons() } }
     
-    public var inactiveTitleColor: UIColor = UIColor.darkGray { didSet { refreshButtons() } }
+    public var inactiveTitleColor: UIColor = .darkGray { didSet { refreshButtons() } }
     
-    public var activeFont: UIFont = UIFont.boldSystemFont(ofSize: 15) { didSet { refreshButtons() } }
+    public var activeBackgroundColor: UIColor = .clear { didSet { refreshButtons() } }
     
-    public var inactiveFont: UIFont = UIFont.systemFont(ofSize: 15) { didSet { refreshButtons() } }
+    public var inactiveBackgroundColor: UIColor = .clear { didSet { refreshButtons() } }
+    
+    public var activeFont: UIFont = .boldSystemFont(ofSize: 15) { didSet { refreshButtons() } }
+    
+    public var inactiveFont: UIFont = .systemFont(ofSize: 15) { didSet { refreshButtons() } }
     
     public var buttonWidth: CGFloat = 100 { didSet { updateButtonWidth() } }
     
-    public var sliderColor: UIColor = UIColor.black {
+    public var sliderColor: UIColor = .black {
         didSet { slider.backgroundColor = sliderColor }
     }
     
@@ -92,6 +96,7 @@ public class SlidingTabHeaderView: UIView {
         sliderHeightConstraint = NSLayoutConstraint(item: slider, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: sliderHeight)
         slider.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(slider)
+        slider.backgroundColor = sliderColor
         NSLayoutConstraint.activate([bottom, width, sliderLeadingConstraint, sliderHeightConstraint])
     }
     
@@ -135,12 +140,14 @@ public class SlidingTabHeaderView: UIView {
     }
     
     func select(_ button: UIButton) {
+        button.backgroundColor = activeBackgroundColor
         button.isSelected = true
         button.titleLabel?.font = activeFont
         button.setTitleColor(activeTitleColor, for: .normal)
     }
     
     func unselect(_ button: UIButton) {
+        button.backgroundColor = inactiveBackgroundColor
         button.isSelected = false
         button.titleLabel?.font = inactiveFont
         button.setTitleColor(inactiveTitleColor, for: .normal)
