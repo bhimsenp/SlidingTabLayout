@@ -17,6 +17,8 @@
 		9FE5F1832EEC0E0CD96F462E8BA48FDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		A5BD064CCC189DD72AC2B38A5CC7ECAB /* SlidingTabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18666D04177149BAE4930CE5EB167C8D /* SlidingTabLayout.swift */; };
 		B1C21B5A946764B19832C50642F1E59F /* Pods-SlidingTabLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70145B8CE3FC974C1222007EAE45F337 /* Pods-SlidingTabLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D578FEA5241B3E2E000FA556 /* SlidingTabHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */; };
+		D578FEA6241B3E32000FA556 /* SlidingTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0693897926F5CD794C1918A48234FB30 /* Pods_SlidingTabLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SlidingTabLayout_Tests.framework; path = "Pods-SlidingTabLayout_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0693897926F5CD794C1918A48234FB30 /* Pods_SlidingTabLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FAEF6B146CB8DFD36CD2382E2A4A8A /* Pods-SlidingTabLayout_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SlidingTabLayout_Example-Info.plist"; sourceTree = "<group>"; };
 		136DF10ACA62E227A84DC74894108AFE /* SlidingTabLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SlidingTabLayout-dummy.m"; sourceTree = "<group>"; };
 		18666D04177149BAE4930CE5EB167C8D /* SlidingTabLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SlidingTabLayout.swift; path = SlidingTabLayout/Classes/SlidingTabLayout.swift; sourceTree = "<group>"; };
@@ -45,26 +47,28 @@
 		1EF9F17A0386A6208EA04763E9E01127 /* Pods-SlidingTabLayout_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SlidingTabLayout_Tests-Info.plist"; sourceTree = "<group>"; };
 		2D8F96F93A3433993450113BE4F01A86 /* SlidingTabLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SlidingTabLayout.release.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3467502E5E9A83E6B4CD65BCC7E4A0FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		3467502E5E9A83E6B4CD65BCC7E4A0FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3B1049203215CEB8914EA37BBCEB9659 /* Pods-SlidingTabLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlidingTabLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3F9F26863A9253E3631366BA9C27F937 /* SlidingTabLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SlidingTabLayout-Info.plist"; sourceTree = "<group>"; };
 		43A6993D4E299F5D4A77A4E955A04F5A /* Pods-SlidingTabLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SlidingTabLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		450FA729953DA88C43A33E2E4E8D590C /* SlidingTabLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SlidingTabLayout.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5075549E36DC5D8EE957F1CE819BCE1A /* Pods_SlidingTabLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SlidingTabLayout_Example.framework; path = "Pods-SlidingTabLayout_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		58FD52BC0AD1316BA40835885B612E64 /* SlidingTabLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SlidingTabLayout.framework; path = SlidingTabLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		450FA729953DA88C43A33E2E4E8D590C /* SlidingTabLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SlidingTabLayout.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5075549E36DC5D8EE957F1CE819BCE1A /* Pods_SlidingTabLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58FD52BC0AD1316BA40835885B612E64 /* SlidingTabLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SlidingTabLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		610F1D77B466317E91AF11ED72CC88C8 /* SlidingTabLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SlidingTabLayout.debug.xcconfig; sourceTree = "<group>"; };
 		6AF30A7A37035247B4F557CE0BCFEE9F /* Pods-SlidingTabLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlidingTabLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		70145B8CE3FC974C1222007EAE45F337 /* Pods-SlidingTabLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SlidingTabLayout_Example-umbrella.h"; sourceTree = "<group>"; };
 		862DB0950252388CF4C4E3389E479A77 /* SlidingTabLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SlidingTabLayout-umbrella.h"; sourceTree = "<group>"; };
 		8C756799A08BDC3E3C4AB28A2E7362DA /* SlidingTabLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SlidingTabLayout-prefix.pch"; sourceTree = "<group>"; };
 		90F9994B69236EE3CD70B6914A1653EB /* Pods-SlidingTabLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SlidingTabLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A2ECB930C2B662D4B211BB922DBDA0F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2ECB930C2B662D4B211BB922DBDA0F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A56E691F1C7E52A093A657FBC22750E9 /* Pods-SlidingTabLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SlidingTabLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B5A73C08E49A7DB81475070B6B452782 /* Pods-SlidingTabLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlidingTabLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CF35542A90F5F59C6FE42389C96BF473 /* Pods-SlidingTabLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SlidingTabLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D0F1F87E3F09487F081687047BC7B122 /* Pods-SlidingTabLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlidingTabLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3BE5273AFCFB2D23E5B62AD23EB3666 /* Pods-SlidingTabLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SlidingTabLayout_Example-dummy.m"; sourceTree = "<group>"; };
+		D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlidingTabHeaderView.swift; path = SlidingTabLayout/Classes/SlidingTabHeaderView.swift; sourceTree = "<group>"; };
+		D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlidingTabContentView.swift; path = SlidingTabLayout/Classes/SlidingTabContentView.swift; sourceTree = "<group>"; };
 		E3C23B3E3C0F29A0EC8C3B67D8E19551 /* SlidingTabLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SlidingTabLayout.modulemap; sourceTree = "<group>"; };
 		E7602A12B0FD9DCB7BC8577800D027BD /* Pods-SlidingTabLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SlidingTabLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EF8F494D74DCEB472FA74B48ADFB1F22 /* Pods-SlidingTabLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SlidingTabLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				18666D04177149BAE4930CE5EB167C8D /* SlidingTabLayout.swift */,
+				D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */,
+				D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */,
 				1010DA6B69F9DB0C5C832AB51183C08E /* Pod */,
 				CE6DB9508928251530DAD9D17FBF5011 /* Support Files */,
 			);
@@ -317,6 +323,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					E819AFC5EA3B33F445B6F1AE6F3B35D2 = {
+						LastSwiftMigration = 1130;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -376,7 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3679679D4A4A7874A7AD12D7976F2B /* SlidingTabLayout-dummy.m in Sources */,
+				D578FEA6241B3E32000FA556 /* SlidingTabContentView.swift in Sources */,
 				A5BD064CCC189DD72AC2B38A5CC7ECAB /* SlidingTabLayout.swift in Sources */,
+				D578FEA5241B3E2E000FA556 /* SlidingTabHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +520,7 @@
 			baseConfigurationReference = B5A73C08E49A7DB81475070B6B452782 /* Pods-SlidingTabLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -529,6 +543,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -588,8 +604,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -664,6 +679,7 @@
 			baseConfigurationReference = 3B1049203215CEB8914EA37BBCEB9659 /* Pods-SlidingTabLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -686,6 +702,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
