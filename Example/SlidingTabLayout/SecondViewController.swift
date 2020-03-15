@@ -1,7 +1,7 @@
 import UIKit
 import SlidingTabLayout
 
-class ViewController2: UIViewController {
+class SecondViewController: UIViewController {
 
     @IBOutlet weak var slidingTabView: SlidingTabView!
     

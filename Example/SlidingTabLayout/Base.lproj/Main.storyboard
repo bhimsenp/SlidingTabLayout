@@ -56,12 +56,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="134"/>
+            <point key="canvasLocation" x="-46" y="135"/>
         </scene>
-        <!--View Controller2-->
+        <!--Second View Controller-->
         <scene sceneID="hif-Hi-HB5">
             <objects>
-                <viewController id="8SI-CQ-5cf" customClass="ViewController2" customModule="SlidingTabLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8SI-CQ-5cf" customClass="SecondViewController" customModule="SlidingTabLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WI5-1f-Max">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
