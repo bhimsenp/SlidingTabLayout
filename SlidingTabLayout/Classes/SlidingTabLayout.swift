@@ -27,6 +27,10 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
         contentView.updateItems(items)
     }
     
+    public func setHeaderMode(_ mode: SlidingTabHeaderMode) {
+        header.setMode(mode)
+    }
+    
     func didTapOnItem(withIndex index: Int) {
         contentView.move(index, animated: true)
     }

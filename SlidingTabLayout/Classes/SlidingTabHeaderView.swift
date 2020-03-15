@@ -3,7 +3,7 @@ import Foundation
 public class SlidingTabHeaderView: UIView {
     
     private var items: [SlidingTabItem]
-    private let mode: SlidingTabHeaderMode
+    private var mode: SlidingTabHeaderMode
     private var buttons: [UIButton] = []
     private let stackView = UIStackView()
     private let slider = UIView()
@@ -32,7 +32,7 @@ public class SlidingTabHeaderView: UIView {
     
     public var buttonWidth: CGFloat = 100 { didSet { updateButtonWidth() } }
     
-    public var sliderColor: UIColor = .black {
+    public var sliderColor: UIColor = .cyan {
         didSet { slider.backgroundColor = sliderColor }
     }
     
@@ -59,18 +59,19 @@ public class SlidingTabHeaderView: UIView {
     private func layoutScrollView() {
         scrollView.showsHorizontalScrollIndicator = false
         addSubviewWithMatchingConstraints(scrollView)
-        scrollView.addSubviewWithMatchingConstraints(stackView)
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
+    }
+    
+    private func layoutTabs() {
+        stackView.removeFromSuperview()
+        scrollView.addSubviewWithMatchingConstraints(stackView)
         let equalWidthConstraint = NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
         let equalHeightConstraint = NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
         NSLayoutConstraint.activate([equalHeightConstraint])
         if(mode == .fixed) {
             NSLayoutConstraint.activate([equalWidthConstraint])
         }
-    }
-    
-    private func layoutTabs() {
         buttons = items.enumerated().map { (i, item) -> UIButton in
             let button = UIButton(type: .custom)
             button.imageView?.contentMode = .scaleAspectFit
@@ -107,6 +108,14 @@ public class SlidingTabHeaderView: UIView {
         layoutSlider()
         layoutIfNeeded()
         updateButtonStyle(selectedIndex: previouslySelected >= items.count ? items.count - 1 : previouslySelected)
+    }
+    
+    func setMode(_ mode: SlidingTabHeaderMode) {
+        self.mode = mode
+        layoutTabs()
+        layoutSlider()
+        layoutIfNeeded()
+        updateButtonStyle(selectedIndex: selectedIndex)
     }
     
     func move(_ offset: CGFloat) {

@@ -1,8 +1,11 @@
 import UIKit
 
+@IBDesignable
 public class SlidingTabView: UIView {
     
     public let layout: SlidingTabLayout
+    
+    @IBInspectable public var isFixedMode: Bool = true { didSet { layout.setHeaderMode(isFixedMode ? .fixed : .free) } }
     
     @IBInspectable public var activeTitleColor: UIColor = .black { didSet { layout.header.activeTitleColor = activeTitleColor } }
     
@@ -27,14 +30,20 @@ public class SlidingTabView: UIView {
     @IBInspectable private var headerHeightConstraint: NSLayoutConstraint!
     
     public override init(frame: CGRect) {
-        let items = [SlidingTabItem(title: "First", viewController: UIViewController())]
+        let items = [
+            SlidingTabItem(title: "First", viewController: UIViewController()),
+            SlidingTabItem(title: "Second", viewController: UIViewController())
+        ]
         self.layout = SlidingTabLayout(items: items)
         super.init(frame: frame)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        let items = [SlidingTabItem(title: "First", viewController: UIViewController())]
+        let items = [
+            SlidingTabItem(title: "First", viewController: UIViewController()),
+            SlidingTabItem(title: "Second", viewController: UIViewController())
+        ]
         self.layout = SlidingTabLayout(items: items)
         super.init(coder: coder)
         commonInit()
