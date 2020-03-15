@@ -1,8 +1,6 @@
 # SlidingTabLayout
 
-[![CI Status](https://img.shields.io/travis/bhimsenp/SlidingTabLayout.svg?style=flat)](https://travis-ci.org/bhimsenp/SlidingTabLayout)
 [![Version](https://img.shields.io/cocoapods/v/SlidingTabLayout.svg?style=flat)](https://cocoapods.org/pods/SlidingTabLayout)
-[![License](https://img.shields.io/cocoapods/l/SlidingTabLayout.svg?style=flat)](https://cocoapods.org/pods/SlidingTabLayout)
 [![Platform](https://img.shields.io/cocoapods/p/SlidingTabLayout.svg?style=flat)](https://cocoapods.org/pods/SlidingTabLayout)
 
 ## About
@@ -80,7 +78,7 @@ myView.addSubview(self.slidingTab.layout.contentView)
 
 ### 3. Adding from Storyboard/XIB
 
-![Add From Storyboard](/images/add_storyboard.png)
+![Add From Storyboard](https://raw.githubusercontent.com/bhimsenp/SlidingTabLayout/0.1.0/images/add_storyboard.png)
 
 ## Changing appearance
 
@@ -102,7 +100,7 @@ slidingTab.header.sliderHeight = 5.0
 ### From storyboard
 Few properties can be changed from storyboard:
 
-![Change Properties From Storyboard](/images/change_properties.png)
+![Change Properties From Storyboard](https://raw.githubusercontent.com/bhimsenp/SlidingTabLayout/0.1.0/images/change_properties.png)
 
 ## Author
 
