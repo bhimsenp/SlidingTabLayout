@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SlidingTabLayout'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Sliding Tab Layout for iOS'
 
   s.description      = <<-DESC
