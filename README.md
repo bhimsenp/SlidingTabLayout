@@ -5,6 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/SlidingTabLayout.svg?style=flat)](https://cocoapods.org/pods/SlidingTabLayout)
 [![Platform](https://img.shields.io/cocoapods/p/SlidingTabLayout.svg?style=flat)](https://cocoapods.org/pods/SlidingTabLayout)
 
+## About
+
+SlidingTabLayout is a library that can be used to add paging view controllers accompanied with Tabs at the top. You can place tab items in header separately from the content views as well as in a single view. It also allows to layout tabs is two modes:
+
+1. Fixed (Used for small number of items): All tab items will be spread equally in a container with width equal to screen
+2. Free (User for large number of items): All tab items will be have given hardcoded width and be scrollable horizontally.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
