@@ -6,6 +6,7 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
     public let header: SlidingTabHeaderView
     public let contentView: SlidingTabContentView
     private var selectedTabIndex = 0
+    public weak var delegate: SlidingTabLayoutDelegate?
     
     public init(items: [SlidingTabItem], mode: SlidingTabMode = .fixed) {
         assert(items.count > 0, "Should have non zero items")
@@ -33,6 +34,10 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
     func didScroll(withOffset offset: CGFloat) {
         header.move(offset)
     }
+    
+    func didLandOnPage(withIndex index: Int) {
+        delegate?.slidingTabLayout(self, didLandOnPageWithIndex: index)
+    }
 }
 
 public struct SlidingTabItem {
@@ -52,7 +57,7 @@ public enum SlidingTabMode {
     case free
 }
 
-public extension UIView {
+extension UIView {
     
     func addSubviewWithMatchingConstraints(_ view: UIView) {
         addSubview(view)
@@ -64,4 +69,8 @@ public extension UIView {
         NSLayoutConstraint.activate([top, bottom, right, left])
     }
     
+}
+
+public protocol SlidingTabLayoutDelegate: class {
+    func slidingTabLayout(_ slidingTabLayout: SlidingTabLayout, didLandOnPageWithIndex index: Int)
 }

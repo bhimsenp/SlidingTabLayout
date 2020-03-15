@@ -74,7 +74,7 @@ public class SlidingTabHeaderView: UIView {
         buttons = items.enumerated().map { (i, item) -> UIButton in
             let button = UIButton(type: .custom)
             button.imageView?.contentMode = .scaleAspectFit
-            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10)
+            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
             button.setTitle(item.title ?? item.viewController.title, for: .normal)
             button.setImage(item.icon, for: .normal)
             button.tag = i

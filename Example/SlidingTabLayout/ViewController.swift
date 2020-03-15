@@ -40,3 +40,17 @@ class ViewController: UIViewController {
         ])
     }
 }
+
+extension UIView {
+    
+    func addSubviewWithMatchingConstraints(_ view: UIView) {
+        addSubview(view)
+        let top = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([top, bottom, right, left])
+    }
+    
+}

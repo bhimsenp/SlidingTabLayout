@@ -54,6 +54,7 @@ public class SlidingTabContentView: UIView, UIPageViewControllerDelegate, UIPage
             selectedTabIndex = index
             delegate?.didScroll(withOffset: (CGFloat)(index))
         }
+        delegate?.didLandOnPage(withIndex: index)
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -73,4 +74,5 @@ public class SlidingTabContentView: UIView, UIPageViewControllerDelegate, UIPage
 
 protocol SlidingTabContentViewDelegate: class {
     func didScroll(withOffset offset: CGFloat)
+    func didLandOnPage(withIndex index: Int)
 }
