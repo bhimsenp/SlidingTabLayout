@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8SI-CQ-5cf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -57,6 +57,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="134"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="hif-Hi-HB5">
+            <objects>
+                <viewController id="8SI-CQ-5cf" customClass="ViewController2" customModule="SlidingTabLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WI5-1f-Max">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gt-HB-aCS" customClass="SlidingTabView" customModule="SlidingTabLayout">
+                                <rect key="frame" x="0.0" y="100" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="sliderColor">
+                                        <color key="value" red="0.0" green="0.74901960779999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Gt-HB-aCS" firstAttribute="leading" secondItem="YW1-0l-xpd" secondAttribute="leading" id="4kq-wZ-Wtq"/>
+                            <constraint firstItem="7Gt-HB-aCS" firstAttribute="bottom" secondItem="YW1-0l-xpd" secondAttribute="bottom" constant="7" id="WgM-cq-dS5"/>
+                            <constraint firstItem="YW1-0l-xpd" firstAttribute="trailing" secondItem="7Gt-HB-aCS" secondAttribute="trailing" id="mBR-QL-ggq"/>
+                            <constraint firstItem="7Gt-HB-aCS" firstAttribute="top" secondItem="YW1-0l-xpd" secondAttribute="top" constant="56" id="rcI-qh-82X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YW1-0l-xpd"/>
+                    </view>
+                    <connections>
+                        <outlet property="slidingTabView" destination="7Gt-HB-aCS" id="3QT-vz-jNi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPs-mE-dY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="107.8125"/>
         </scene>
     </scenes>
 </document>

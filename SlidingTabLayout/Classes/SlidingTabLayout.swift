@@ -8,7 +8,7 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
     private var selectedTabIndex = 0
     public weak var delegate: SlidingTabLayoutDelegate?
     
-    public init(items: [SlidingTabItem], mode: SlidingTabMode = .fixed) {
+    public init(items: [SlidingTabItem], mode: SlidingTabHeaderMode = .fixed) {
         assert(items.count > 0, "Should have non zero items")
         self.items = items
         self.header = SlidingTabHeaderView(items: items, mode: mode)
@@ -22,7 +22,7 @@ public class SlidingTabLayout: SlidingTabHeaderDelegate, SlidingTabContentViewDe
         contentView.move(tabIndex, animated: animated)
     }
     
-    public func updateItems(items: [SlidingTabItem]) {
+    public func setItems(items: [SlidingTabItem]) {
         header.updateItems(items)
         contentView.updateItems(items)
     }
@@ -52,7 +52,7 @@ public struct SlidingTabItem {
     }
 }
 
-public enum SlidingTabMode {
+public enum SlidingTabHeaderMode {
     case fixed
     case free
 }

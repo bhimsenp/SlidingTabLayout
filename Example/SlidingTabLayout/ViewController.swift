@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         vc1.view.backgroundColor = .red
         vc2.view.backgroundColor = .blue
         vc3.view.backgroundColor = .green
-        slidingTab.updateItems(items: [
+        slidingTab.setItems(items: [
             SlidingTabItem(title: "Red", viewController: vc1),
             SlidingTabItem(title: "Blue", viewController: vc2)
         ])

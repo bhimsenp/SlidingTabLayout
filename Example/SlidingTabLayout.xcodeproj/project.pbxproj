@@ -15,6 +15,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		A1A895DBB0A6F1ADD465C26B /* Pods_SlidingTabLayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9797BADBFF2FAB7F7FAA478 /* Pods_SlidingTabLayout_Example.framework */; };
 		A984CAD51FF58AE1A3F5C62E /* Pods_SlidingTabLayout_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02D592FFFA6FDB231ACDA43 /* Pods_SlidingTabLayout_Tests.framework */; };
+		D55049B2241E67C500A51E80 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55049B1241E67C500A51E80 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A5238E327480FF17350BE23A /* Pods-SlidingTabLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlidingTabLayout_Example.release.xcconfig"; path = "Target Support Files/Pods-SlidingTabLayout_Example/Pods-SlidingTabLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C58167E5DBA7839B9A73CEBE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D02D592FFFA6FDB231ACDA43 /* Pods_SlidingTabLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D55049B1241E67C500A51E80 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		E9797BADBFF2FAB7F7FAA478 /* Pods_SlidingTabLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlidingTabLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				D55049B1241E67C500A51E80 /* ViewController2.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -333,6 +336,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				D55049B2241E67C500A51E80 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

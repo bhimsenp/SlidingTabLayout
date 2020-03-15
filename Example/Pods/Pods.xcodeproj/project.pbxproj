@@ -17,6 +17,7 @@
 		9FE5F1832EEC0E0CD96F462E8BA48FDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		A5BD064CCC189DD72AC2B38A5CC7ECAB /* SlidingTabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18666D04177149BAE4930CE5EB167C8D /* SlidingTabLayout.swift */; };
 		B1C21B5A946764B19832C50642F1E59F /* Pods-SlidingTabLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70145B8CE3FC974C1222007EAE45F337 /* Pods-SlidingTabLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D55049B4241E6D4200A51E80 /* SlidingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55049B3241E6D4200A51E80 /* SlidingTabView.swift */; };
 		D578FEA5241B3E2E000FA556 /* SlidingTabHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */; };
 		D578FEA6241B3E32000FA556 /* SlidingTabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		CF35542A90F5F59C6FE42389C96BF473 /* Pods-SlidingTabLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SlidingTabLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D0F1F87E3F09487F081687047BC7B122 /* Pods-SlidingTabLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlidingTabLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3BE5273AFCFB2D23E5B62AD23EB3666 /* Pods-SlidingTabLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SlidingTabLayout_Example-dummy.m"; sourceTree = "<group>"; };
+		D55049B3241E6D4200A51E80 /* SlidingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlidingTabView.swift; path = SlidingTabLayout/Classes/SlidingTabView.swift; sourceTree = "<group>"; };
 		D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlidingTabHeaderView.swift; path = SlidingTabLayout/Classes/SlidingTabHeaderView.swift; sourceTree = "<group>"; };
 		D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlidingTabContentView.swift; path = SlidingTabLayout/Classes/SlidingTabContentView.swift; sourceTree = "<group>"; };
 		E3C23B3E3C0F29A0EC8C3B67D8E19551 /* SlidingTabLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SlidingTabLayout.modulemap; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				18666D04177149BAE4930CE5EB167C8D /* SlidingTabLayout.swift */,
 				D578FEA1241B3D78000FA556 /* SlidingTabHeaderView.swift */,
 				D578FEA3241B3DEF000FA556 /* SlidingTabContentView.swift */,
+				D55049B3241E6D4200A51E80 /* SlidingTabView.swift */,
 				1010DA6B69F9DB0C5C832AB51183C08E /* Pod */,
 				CE6DB9508928251530DAD9D17FBF5011 /* Support Files */,
 			);
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D55049B4241E6D4200A51E80 /* SlidingTabView.swift in Sources */,
 				3F3679679D4A4A7874A7AD12D7976F2B /* SlidingTabLayout-dummy.m in Sources */,
 				D578FEA6241B3E32000FA556 /* SlidingTabContentView.swift in Sources */,
 				A5BD064CCC189DD72AC2B38A5CC7ECAB /* SlidingTabLayout.swift in Sources */,

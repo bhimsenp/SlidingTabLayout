@@ -3,7 +3,7 @@ import Foundation
 public class SlidingTabHeaderView: UIView {
     
     private var items: [SlidingTabItem]
-    private let mode: SlidingTabMode
+    private let mode: SlidingTabHeaderMode
     private var buttons: [UIButton] = []
     private let stackView = UIStackView()
     private let slider = UIView()
@@ -40,7 +40,7 @@ public class SlidingTabHeaderView: UIView {
         didSet { sliderHeightConstraint.constant = sliderHeight }
     }
     
-    init(items: [SlidingTabItem], mode: SlidingTabMode) {
+    init(items: [SlidingTabItem], mode: SlidingTabHeaderMode) {
         self.items = items
         self.mode = mode
         super.init(frame: CGRect.zero)
